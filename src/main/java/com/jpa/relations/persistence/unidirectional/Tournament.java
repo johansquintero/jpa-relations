@@ -1,14 +1,17 @@
-package com.jpa.relations.persistence.entities;
+package com.jpa.relations.persistence.unidirectional;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-@Entity
-@Data
-@Table(name = "torunament")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "Tournament_uni")
+@Table(name = "tournament_uni")
 public class Tournament {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +23,4 @@ public class Tournament {
 
     @Column(name = "end_date",columnDefinition = "DATE")
     private LocalDate endDate;
-
-    @ManyToMany(targetEntity = Club.class,fetch = FetchType.LAZY, mappedBy = "tournaments")
-    private Set<Club> clubs;
 }

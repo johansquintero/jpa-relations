@@ -1,10 +1,18 @@
-package com.jpa.relations.persistence.entities;
+package com.jpa.relations.persistence.bidirectional;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
-@Entity
-@Table(name = "players")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "Player_bi")
+@Table(name = "players_bi")
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

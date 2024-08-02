@@ -1,13 +1,16 @@
-package com.jpa.relations.persistence.entities;
+package com.jpa.relations.persistence.bidirectional;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Set;
 
-@Entity
-@Data
-@Table(name = "football_associations")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "Football_associations_bi")
+@Table(name = "football_associations_bi")
 public class FootballAssociation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
